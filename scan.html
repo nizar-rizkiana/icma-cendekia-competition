@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#030a22">
+<title>Scan Kartu Peserta — ICMA Cendekia Competition 2026</title>
+<link rel="icon" href="assets/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="admin.css" rel="stylesheet">
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<!-- LOGIN TIM REGISTRASI -->
+<main id="loginView" class="login-wrap">
+  <form id="loginForm" class="login-card" autocomplete="off">
+    <img src="assets/logo.png" alt="Logo SMP IT ICMA" width="72" height="69" class="mb-3">
+    <h1 class="h4 fw-bold mb-1">Validasi Kartu Peserta</h1>
+    <p class="text-muted small mb-4">Khusus tim registrasi ICMA Cendekia Competition 2026</p>
+    <label class="form-label" for="pw">Password panitia</label>
+    <input class="form-control mb-2" type="password" id="pw" required autocomplete="current-password">
+    <div id="loginErr" class="text-danger small mb-2" role="alert"></div>
+    <button class="btn btn-cyan w-100" id="loginBtn" type="submit">Masuk</button>
+  </form>
+</main>
+
+<!-- SCANNER -->
+<main id="scanView" class="scan-wrap" hidden>
+  <header class="scan-head">
+    <div class="d-flex align-items-center gap-2"><img src="assets/logo.png" alt="" width="36" height="35"><div><strong>Scan Kartu Peserta</strong><small class="d-block text-muted">ICMA Cendekia 2026</small></div></div>
+    <button class="btn btn-sm btn-outline-light" id="btnLogout" type="button">Keluar</button>
+  </header>
+
+  <div class="viewport" id="viewport">
+    <video id="video" playsinline muted></video>
+    <div class="vp-frame" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="vp-line"></span></div>
+    <div class="vp-idle" id="vpIdle"><p>Kamera belum aktif</p></div>
+  </div>
+  <div class="d-flex gap-2 my-3">
+    <button class="btn btn-cyan flex-grow-1" id="btnCam" type="button">Mulai kamera</button>
+    <button class="btn btn-glass" id="btnFlip" type="button" disabled>Ganti kamera</button>
+  </div>
+  <div id="camMsg" class="small text-muted mb-3" role="status">Arahkan kamera ke QR code pada kartu peserta.</div>
+
+  <form id="manualForm" class="card-box mb-3" autocomplete="off">
+    <label class="form-label small" for="manualId">Kamera bermasalah? Ketik ID registrasi peserta</label>
+    <div class="input-group"><input class="form-control" id="manualId" placeholder="ICMA26-0012-01" autocapitalize="characters"><button class="btn btn-outline-primary" type="submit">Cek</button></div>
+  </form>
+
+  <div class="card-box"><h2 class="ch">Riwayat scan sesi ini <small id="histCount"></small></h2><div id="hist"><div class="empty">Belum ada scan.</div></div></div>
+</main>
+
+<!-- HASIL -->
+<div id="res" class="res" hidden role="alertdialog" aria-live="assertive" aria-labelledby="resTitle">
+  <div class="res-card" id="resCard">
+    <div class="res-ico" id="resIco" aria-hidden="true"></div>
+    <h2 id="resTitle"></h2>
+    <p id="resMsg" class="res-msg"></p>
+    <dl class="res-det" id="resDet"></dl>
+    <button class="btn btn-light w-100" id="resNext" type="button">Scan berikutnya</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="config.js"></script>
+<script src="scan.js"></script>
+</body>
+</html>
