@@ -1,358 +1,919 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id" data-bs-theme="dark">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ICMA Cendekia Competition 2026 — SMP IT ICMA</title>
-<meta name="description" content="Kompetisi pelajar SD/MI kelas 4–6 se-sekitar Kabupaten Pandeglang: Tahfidz, English, Bahasa Arab, dan Mini Soccer. Diselenggarakan SMP IT ICMA.">
-<meta property="og:image" content="assets/campus-hero.jpg">
-<meta name="theme-color" content="#030a22">
-<link rel="icon" href="assets/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<link rel="preload" as="image" href="assets/campus-hero.jpg" fetchpriority="high">
-<link href="style.css" rel="stylesheet">
-</head>
-<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="-1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ICMA Cendekia Competition 2026 — SMP IT ICMA</title>
+    <meta
+      name="description"
+      content="Kompetisi pelajar SD/MI kelas 4–6 se-sekitar Kabupaten Pandeglang: Tahfidz, English, Bahasa Arab, dan Mini Soccer. Diselenggarakan SMP IT ICMA."
+    />
+    <meta property="og:image" content="assets/campus-hero.jpg" />
+    <meta name="theme-color" content="#030a22" />
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/campus-hero.jpg"
+      fetchpriority="high"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#mainNav"
+    data-bs-offset="90"
+    tabindex="-1"
+  >
+    <div id="loader" aria-hidden="true">
+      <div class="loader-ring"></div>
+      <span>ICMA Cendekia</span>
+    </div>
 
-<div id="loader" aria-hidden="true"><div class="loader-ring"></div><span>ICMA Cendekia</span></div>
+    <div id="progress" aria-hidden="true"></div>
+    <canvas id="fx" aria-hidden="true"></canvas>
+    <canvas id="burst" aria-hidden="true"></canvas>
+    <nav id="trail" aria-label="Alur perjalanan"></nav>
 
-<div id="progress" aria-hidden="true"></div>
-<canvas id="fx" aria-hidden="true"></canvas>
-<canvas id="burst" aria-hidden="true"></canvas>
-<nav id="trail" aria-label="Alur perjalanan"></nav>
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+          <span class="brand-mark" id="brandLogo">I</span>
+          <span class="brand-text"
+            ><strong>SMP IT ICMA</strong
+            ><small>Cendekia Competition 2026</small></span
+          >
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Buka menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tentang">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#perlombaan">Perlombaan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#juknis">Juknis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pendaftaran">Pendaftaran</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#informasi">Informasi</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
-      <span class="brand-mark" id="brandLogo">I</span>
-      <span class="brand-text"><strong>SMP IT ICMA</strong><small>Cendekia Competition 2026</small></span>
+    <main>
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="hero-photo" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="container position-relative">
+          <div class="row align-items-center gy-5">
+            <div class="col-lg-7">
+              <p class="hero-kicker">Diselenggarakan oleh SMP IT ICMA</p>
+              <h1 class="hero-title">ICMA Cendekia<br />Competition 2026</h1>
+              <p class="hero-tag">“Be Cendekia, Be an Inspiration”</p>
+              <p class="hero-desc">
+                Ajang kompetisi pelajar untuk mengembangkan potensi,
+                kreativitas, keterampilan, dan prestasi generasi cendekia.
+              </p>
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                <a href="#pendaftaran" class="btn btn-cyan btn-lg"
+                  >Daftar Sekarang</a
+                >
+                <a href="#perlombaan" class="btn btn-glass btn-lg"
+                  >Jelajahi Perlombaan</a
+                >
+              </div>
+              <div class="countdown-box" aria-live="off">
+                <div class="cd-label" id="cdLabel">
+                  Hitung mundur peluncuran
+                </div>
+                <div class="cd-row" id="cdRow"></div>
+                <div class="cd-sub" id="cdSub"></div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="orbit-wrap">
+                <div
+                  class="orbit"
+                  id="orbit"
+                  role="group"
+                  aria-label="Orbit lima cabang lomba. Pilih sebuah planet untuk melihat detail lomba"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TENTANG -->
+      <section id="tentang" class="section">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6" data-aos="fade-up">
+              <h2 class="section-title">Wadah tumbuh bagi siswa SD/MI</h2>
+              <p class="lead-muted">
+                ICMA Cendekia Competition diselenggarakan oleh SMP IT ICMA
+                sebagai wadah pengembangan potensi siswa SD/MI dalam bidang
+                keislaman, bahasa, dan olahraga.
+              </p>
+              <p class="lead-muted mb-0">
+                Terbuka bagi siswa kelas 4–6 di wilayah sekitar Kabupaten
+                Pandeglang, dengan tema
+                <em>“Be Cendekia, Be an Inspiration”</em>.
+              </p>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <figure class="about-photo">
+                <img
+                  src="assets/campus.jpg"
+                  alt="Foto udara kampus SMP IT ICMA: masjid berkubah emas dan gedung sekolah di tengah hijaunya alam"
+                  width="900"
+                  height="675"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>
+                  Pangkalan peluncuran: kampus SMP IT ICMA
+                </figcaption>
+              </figure>
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="fact">
+                    <strong>5</strong><span>Cabang lomba</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="fact">
+                    <strong>4–6</strong><span>Kelas SD/MI</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="fact">
+                    <strong>2</strong><span>Gelombang pendaftaran</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="fact">
+                    <strong>Online</strong
+                    ><span>Daftar &amp; bayar dari mana saja</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LAB ORBIT -->
+      <section id="lab" class="section">
+        <div class="container">
+          <div class="section-head" data-aos="fade-up">
+            <h2 class="section-title">Laboratorium orbit</h2>
+            <p class="lead-muted">
+              Pilih planet, baca fakta singkatnya, lalu hitung bobotmu di sana.
+            </p>
+          </div>
+          <div class="panel lab" data-aos="fade-up">
+            <div class="row g-4 align-items-center">
+              <div class="col-md-5 text-center">
+                <div class="lab-stage" id="labStage" aria-hidden="true"></div>
+              </div>
+              <div class="col-md-7" aria-live="polite">
+                <h3 class="lab-name" id="labName"></h3>
+                <dl class="lab-stats">
+                  <dt>Diameter</dt>
+                  <dd id="labDia"></dd>
+                  <dt>Gravitasi (Bumi = 1)</dt>
+                  <dd id="labGrav"></dd>
+                </dl>
+                <p class="lab-fact" id="labFact"></p>
+                <label class="form-label" for="labKg"
+                  >Bobot badanmu di Bumi (kg)</label
+                >
+                <div class="input-group">
+                  <input
+                    id="labKg"
+                    type="number"
+                    inputmode="decimal"
+                    min="1"
+                    max="200"
+                    value="30"
+                    class="form-control"
+                  /><span class="input-group-text" id="labOut"></span>
+                </div>
+                <div class="small text-muted mt-1">
+                  Massamu tetap; yang berubah adalah gaya gravitasi yang
+                  menarikmu.
+                </div>
+              </div>
+            </div>
+            <div class="lab-picker" id="labPick"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PERLOMBAAN -->
+      <section id="perlombaan" class="section section-alt">
+        <div class="container">
+          <div class="section-head" data-aos="fade-up">
+            <h2 class="section-title">Cabang perlombaan</h2>
+            <p class="lead-muted">Pilih lomba, lihat detailnya, lalu daftar.</p>
+          </div>
+          <div class="row g-4" id="cardGrid"></div>
+        </div>
+      </section>
+
+      <!-- JUKNIS -->
+      <section id="juknis" class="section">
+        <div class="container">
+          <div class="section-head" data-aos="fade-up">
+            <h2 class="section-title">Juknis perlombaan</h2>
+            <p class="lead-muted">
+              Unduh atau pratinjau petunjuk teknis tiap lomba.
+            </p>
+          </div>
+          <div class="row g-3" id="juknisList"></div>
+        </div>
+      </section>
+
+      <!-- INFORMASI -->
+      <section id="informasi" class="section section-alt">
+        <div class="container">
+          <div class="section-head" data-aos="fade-up">
+            <h2 class="section-title">Informasi pendaftaran</h2>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-7" data-aos="fade-up">
+              <div class="panel">
+                <h3 class="panel-title">Biaya pendaftaran</h3>
+                <div class="table-responsive">
+                  <table
+                    class="table fee-table align-middle mb-0"
+                    id="feeTable"
+                  ></table>
+                </div>
+                <p class="small text-muted mt-3 mb-0">
+                  Gelombang ditentukan otomatis dari tanggal Anda mendaftar.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+              <div class="panel panel-navy">
+                <h3 class="panel-title">Informasi pembayaran</h3>
+                <dl class="pay-list">
+                  <dt>Bank</dt>
+                  <dd id="payBank"></dd>
+                  <dt>Atas nama</dt>
+                  <dd id="payName"></dd>
+                  <dt>Nomor rekening</dt>
+                  <dd class="acc" id="payNo"></dd>
+                </dl>
+                <div class="d-flex flex-wrap gap-2">
+                  <button type="button" class="btn btn-cyan" id="btnCopyAcc">
+                    Salin Nomor Rekening
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-glass"
+                    id="btnConfirmPay"
+                  >
+                    Konfirmasi Pembayaran
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up">
+              <div class="panel h-100">
+                <h3 class="panel-title">Ketentuan umum</h3>
+                <ol class="rules">
+                  <li>
+                    Kegiatan diselenggarakan oleh SMP IT ICMA dalam rangka
+                    pengembangan potensi siswa SD di bidang Tahfidz, Bahasa
+                    Inggris, Bahasa Arab, dan Olahraga (Mini Soccer).
+                  </li>
+                  <li>
+                    Peserta adalah siswa Sekolah Dasar (SD) atau Madrasah
+                    Ibtidaiyah kelas 4–6 di wilayah sekitar Kabupaten
+                    Pandeglang.
+                  </li>
+                  <li>
+                    Peserta wajib mendaftar sesuai ketentuan panitia dan
+                    membayar biaya pendaftaran.
+                  </li>
+                  <li>Peserta wajib mengisi formulir pendaftaran.</li>
+                  <li>
+                    Technical Meeting dilaksanakan pada 16 November 2026 di SMP
+                    IT ICMA.
+                  </li>
+                  <li>Peserta wajib hadir 30 menit sebelum lomba dimulai.</li>
+                  <li>
+                    Peserta wajib menjaga sikap, kebersihan, dan ketertiban
+                    selama kegiatan berlangsung.
+                  </li>
+                  <li>
+                    Seluruh keputusan juri bersifat mutlak dan tidak dapat
+                    diganggu gugat.
+                  </li>
+                  <li>
+                    Panitia berhak melakukan penyesuaian jadwal apabila
+                    diperlukan demi kelancaran kegiatan.
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="panel h-100">
+                <h3 class="panel-title">Timeline</h3>
+                <ol class="timeline" id="timeline"></ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PENDAFTARAN -->
+      <section id="pendaftaran" class="section">
+        <div class="container">
+          <div class="section-head" data-aos="fade-up">
+            <h2 class="section-title">Pendaftaran online</h2>
+            <p class="lead-muted">
+              Lima langkah singkat. Data tersimpan langsung ke sistem panitia.
+            </p>
+          </div>
+          <div class="form-shell mx-auto" id="regShell">
+            <ol class="stepper" id="stepper" aria-label="Langkah pendaftaran">
+              <li>Sekolah</li>
+              <li>Lomba</li>
+              <li>Pendamping</li>
+              <li>Pembayaran</li>
+              <li>Konfirmasi</li>
+            </ol>
+            <div id="regAlert" role="alert" class="alert d-none"></div>
+            <form id="regForm" novalidate autocomplete="off">
+              <!-- STEP 1 -->
+              <fieldset class="step" data-step="1">
+                <legend>Kategori &amp; informasi sekolah</legend>
+                <div
+                  class="row g-3 mb-3"
+                  role="radiogroup"
+                  aria-label="Kategori pendaftar"
+                >
+                  <div class="col-sm-6">
+                    <label class="pick"
+                      ><input
+                        type="radio"
+                        name="kategori"
+                        value="Individu"
+                      /><span
+                        >Pendaftar Individu<small
+                          >Mendaftarkan satu peserta atau satu tim</small
+                        ></span
+                      ></label
+                    >
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="pick"
+                      ><input
+                        type="radio"
+                        name="kategori"
+                        value="Sekolah"
+                      /><span
+                        >Pendaftar dari Sekolah<small
+                          >Pembina mendaftarkan lebih dari satu siswa/tim
+                          sekaligus</small
+                        ></span
+                      ></label
+                    >
+                  </div>
+                </div>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label" for="f_sekolah"
+                      >Nama sekolah *</label
+                    ><input
+                      class="form-control"
+                      id="f_sekolah"
+                      required
+                      maxlength="120"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="f_alamat"
+                      >Alamat sekolah *</label
+                    ><textarea
+                      class="form-control"
+                      id="f_alamat"
+                      rows="2"
+                      required
+                      maxlength="300"
+                    ></textarea>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="f_kec">Kecamatan *</label
+                    ><input
+                      class="form-control"
+                      id="f_kec"
+                      required
+                      maxlength="80"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="f_kab"
+                      >Kabupaten/Kota *</label
+                    ><input
+                      class="form-control"
+                      id="f_kab"
+                      required
+                      maxlength="80"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="f_kepsek"
+                      >Nama kepala sekolah
+                      <span class="text-muted">(opsional)</span></label
+                    ><input
+                      class="form-control"
+                      id="f_kepsek"
+                      maxlength="100"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+              <!-- STEP 2 -->
+              <fieldset class="step" data-step="2" hidden>
+                <legend id="step2Legend">Pilih cabang lomba</legend>
+                <div id="entryBox" hidden class="mb-3">
+                  <div class="sum-title mt-0">
+                    Daftar peserta/tim yang sudah ditambahkan
+                  </div>
+                  <div id="entryList" class="vstack gap-2"></div>
+                </div>
+                <div class="row g-3 mb-3" id="cabangPick"></div>
+                <div id="blockIndividual" hidden>
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label class="form-label" for="f_pnama"
+                        >Nama lengkap peserta *</label
+                      ><input
+                        class="form-control"
+                        id="f_pnama"
+                        maxlength="100"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="f_pjk"
+                        >Jenis kelamin *</label
+                      ><select class="form-select" id="f_pjk">
+                        <option value="">Pilih…</option>
+                        <option>Laki-laki</option>
+                        <option>Perempuan</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="f_pkelas">Kelas *</label
+                      ><select class="form-select" id="f_pkelas">
+                        <option value="">Pilih…</option>
+                        <option>Kelas 4</option>
+                        <option>Kelas 5</option>
+                        <option>Kelas 6</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label" for="f_pttl"
+                        >Tempat dan tanggal lahir
+                        <span class="text-muted">(opsional)</span></label
+                      ><input
+                        class="form-control"
+                        id="f_pttl"
+                        maxlength="100"
+                        placeholder="Contoh: Pandeglang, 12 Mei 2016"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div id="blockTeam" hidden>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label" for="f_tnama">Nama tim *</label
+                      ><input
+                        class="form-control"
+                        id="f_tnama"
+                        maxlength="80"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="f_tsekolah"
+                        >Nama sekolah *</label
+                      ><input
+                        class="form-control"
+                        id="f_tsekolah"
+                        maxlength="120"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="f_tpelatih"
+                        >Nama pelatih/pendamping *</label
+                      ><input
+                        class="form-control"
+                        id="f_tpelatih"
+                        maxlength="100"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="f_twa"
+                        >Nomor WhatsApp *</label
+                      ><input
+                        class="form-control"
+                        id="f_twa"
+                        inputmode="tel"
+                        placeholder="08xxxxxxxxxx"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-4 mb-2"
+                  >
+                    <h3 class="h6 mb-0">Daftar pemain</h3>
+                    <span class="badge badge-soft" id="playerCount"></span>
+                  </div>
+                  <div id="playerRows" class="vstack gap-2"></div>
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary btn-sm mt-3"
+                    id="addPlayer"
+                  >
+                    Tambah pemain
+                  </button>
+                  <div class="mt-4">
+                    <label class="form-label" for="f_ska"
+                      >Surat keterangan aktif peserta didik/siswa *
+                      <span class="text-muted"
+                        >(JPG, JPEG, PNG, atau PDF, maks.
+                        <span class="maxmb">2</span> MB)</span
+                      ></label
+                    >
+                    <input
+                      class="form-control"
+                      type="file"
+                      id="f_ska"
+                      accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"
+                    />
+                    <div class="small mt-1" id="skaInfo"></div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mt-3"
+                  id="btnAddEntry"
+                  hidden
+                >
+                  Tambahkan ke daftar
+                </button>
+              </fieldset>
+              <!-- STEP 3 -->
+              <fieldset class="step" data-step="3" hidden>
+                <legend>Data pendamping</legend>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label" for="f_gnama"
+                      >Nama guru pendamping *</label
+                    ><input class="form-control" id="f_gnama" maxlength="100" />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="f_gwa"
+                      >Nomor WhatsApp aktif *</label
+                    ><input
+                      class="form-control"
+                      id="f_gwa"
+                      inputmode="tel"
+                      placeholder="08xxxxxxxxxx"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="f_gemail"
+                      >Email <span class="text-muted">(opsional)</span></label
+                    ><input
+                      class="form-control"
+                      id="f_gemail"
+                      type="email"
+                      maxlength="120"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+              <!-- STEP 4 -->
+              <fieldset class="step" data-step="4" hidden>
+                <legend>Pembayaran</legend>
+                <div class="pay-summary mb-3">
+                  <div>
+                    <span>Gelombang</span><strong id="payWave">–</strong>
+                  </div>
+                  <div>
+                    <span>Nominal</span><strong id="payAmount">–</strong>
+                  </div>
+                </div>
+                <div id="payBreak" class="small mb-3"></div>
+                <div class="panel panel-soft mb-3">
+                  <div class="small">
+                    Transfer ke <strong id="payBank2"></strong> a.n.
+                    <strong id="payName2"></strong>
+                  </div>
+                  <div class="acc fs-5" id="payNo2"></div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="f_bukti"
+                    >Unggah bukti transfer *
+                    <span class="text-muted"
+                      >(JPG, JPEG, PNG, atau PDF, maks.
+                      <span class="maxmb">2</span> MB)</span
+                    ></label
+                  >
+                  <input
+                    class="form-control"
+                    type="file"
+                    id="f_bukti"
+                    accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"
+                  />
+                  <div class="small mt-1" id="fileInfo"></div>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="f_setuju"
+                  /><label class="form-check-label" for="f_setuju"
+                    >Saya menyatakan data yang diisi benar dan menyetujui data
+                    digunakan panitia untuk keperluan kompetisi ini. *</label
+                  >
+                </div>
+              </fieldset>
+              <!-- STEP 5 -->
+              <fieldset class="step" data-step="5" hidden>
+                <legend>Periksa &amp; kirim</legend>
+                <div id="summary"></div>
+              </fieldset>
+              <div class="d-flex justify-content-between mt-4 pt-3 border-top">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  id="btnPrev"
+                >
+                  Kembali
+                </button>
+                <button type="button" class="btn btn-primary" id="btnNext">
+                  Lanjut
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  id="btnSubmit"
+                  hidden
+                >
+                  Kirim Pendaftaran
+                </button>
+              </div>
+            </form>
+            <div id="regDone" hidden class="text-center py-4">
+              <div class="done-check" aria-hidden="true">✓</div>
+              <h3 class="h4">Pendaftaran berhasil dikirim</h3>
+              <p class="mb-1">Nomor registrasi Anda</p>
+              <div class="reg-id" id="regId"></div>
+              <p class="text-muted small mt-3 mb-3">
+                Simpan nomor ini. Panitia akan memverifikasi pembayaran Anda.
+              </p>
+              <div class="card-notice mx-auto" role="note">
+                <strong>Penting:</strong> kartu peserta
+                <strong>wajib dibawa saat pelaksanaan perlombaan</strong>. Unduh
+                atau cetak kartu (ukuran 9 × 11 cm) di bawah ini.
+              </div>
+              <div
+                id="cardList"
+                class="vstack gap-2 text-start my-3 mx-auto"
+              ></div>
+              <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
+                <button class="btn btn-cyan" id="dlCards" type="button">
+                  Download PDF Kartu
+                </button>
+                <button class="btn btn-glass" id="prCards" type="button">
+                  Cetak Kartu
+                </button>
+              </div>
+              <div id="waGroups" class="mb-4"></div>
+              <div class="d-flex flex-wrap gap-2 justify-content-center">
+                <button
+                  class="btn btn-outline-primary"
+                  id="copyRegId"
+                  type="button"
+                >
+                  Salin nomor
+                </button>
+                <button class="btn btn-primary" id="waConfirm" type="button">
+                  Kabari panitia via WhatsApp
+                </button>
+                <button
+                  class="btn btn-outline-secondary"
+                  id="newReg"
+                  type="button"
+                >
+                  Daftar lagi
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section section-alt">
+        <div class="container" style="max-width: 820px">
+          <div class="section-head" data-aos="fade-up">
+            <h2 class="section-title">Pertanyaan umum</h2>
+          </div>
+          <div class="accordion" id="faqAcc"></div>
+        </div>
+      </section>
+
+      <!-- PENDARATAN: penutup cerita -->
+      <section id="puncak" class="summit">
+        <span class="pw earth" style="--s: 74px" aria-hidden="true"
+          ><span class="pl k-ocean"></span
+        ></span>
+        <svg
+          class="summit-art"
+          viewBox="0 0 800 220"
+          preserveAspectRatio="xMidYMax slice"
+          aria-hidden="true"
+        >
+          <ellipse cx="400" cy="345" rx="640" ry="200" fill="#b8c8e6" />
+          <ellipse cx="170" cy="190" rx="38" ry="9" fill="#93a8cf" />
+          <ellipse cx="560" cy="175" rx="52" ry="11" fill="#93a8cf" />
+          <ellipse cx="420" cy="205" rx="26" ry="6" fill="#93a8cf" />
+          <ellipse cx="690" cy="205" rx="30" ry="7" fill="#93a8cf" />
+          <g class="flag">
+            <path d="M270 98V152" stroke="#fff" stroke-width="3" />
+            <path
+              class="cloth"
+              d="M273 100h36l-8 11 8 11h-36z"
+              fill="#2EBEFF"
+            />
+          </g>
+        </svg>
+        <svg
+          class="rocket"
+          width="34"
+          height="68"
+          viewBox="0 0 34 68"
+          aria-hidden="true"
+        >
+          <path d="M17 0c9 10 12 24 10 40H7C5 24 8 10 17 0z" fill="#fff" />
+          <circle cx="17" cy="22" r="5" fill="#2EBEFF" />
+          <path d="M7 32L0 48l8-4zM27 32l7 16-8-4z" fill="#1150F8" />
+          <path class="flame" d="M11 42h12l-6 24z" fill="#ffb347" />
+        </svg>
+        <div class="container position-relative text-center">
+          <h2 class="summit-title">Landasan bulan menantimu</h2>
+          <p class="summit-text">
+            Setiap penjelajah besar bermula dari satu langkah berani. Langkahmu
+            hari ini bisa menjadi inspirasi bagi teman-temanmu.
+          </p>
+          <a href="#pendaftaran" class="btn btn-cyan btn-lg">Mulai Misiku</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <h3 class="h5">SMP IT ICMA</h3>
+            <p class="mb-1" id="ftAddress"></p>
+            <p class="small opacity-75 mb-0">
+              ICMA Cendekia Competition 2026 — Be Cendekia, Be an Inspiration
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h3 class="h6">Hubungi panitia</h3>
+            <div id="ftContact" class="d-flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+        <hr class="opacity-25" />
+        <div class="small opacity-75">
+          © 2026 SMP IT ICMA. Seluruh hak dilindungi | Powered By
+          <a href="https://codecraftdigital.id">CodeCraft Digital</a>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      id="waFloat"
+      class="wa-float"
+      href="#"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat WhatsApp panitia"
+    >
+      <svg
+        width="26"
+        height="26"
+        viewBox="0 0 24 24"
+        fill="#fff"
+        aria-hidden="true"
+      >
+        <path
+          d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.4-.2-2.600.7.7-2.500-.3-.4A8 8 0 0 1 12 4zm-3 3.500c-.3 0-.6.300-.8.600-.4.600-.4 1.300.1 2.200.8 1.600 2.200 3 3.900 3.800 1 .5 1.800.6 2.400.2.4-.3.600-.8.500-1.100l-1.500-.8-.6.700c-1-.3-2-1.300-2.400-2.300l.6-.7-.8-1.600z"
+        />
+      </svg>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Buka menu"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
-        <li class="nav-item"><a class="nav-link" href="#perlombaan">Perlombaan</a></li>
-        <li class="nav-item"><a class="nav-link" href="#juknis">Juknis</a></li>
-        <li class="nav-item"><a class="nav-link" href="#pendaftaran">Pendaftaran</a></li>
-        <li class="nav-item"><a class="nav-link" href="#informasi">Informasi</a></li>
-        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
-<main>
-<!-- HERO -->
-<section id="home" class="hero">
-  <div class="hero-photo" aria-hidden="true"></div>
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="container position-relative">
-    <div class="row align-items-center gy-5">
-      <div class="col-lg-7">
-        <p class="hero-kicker">Diselenggarakan oleh SMP IT ICMA</p>
-        <h1 class="hero-title">ICMA Cendekia<br>Competition 2026</h1>
-        <p class="hero-tag">“Be Cendekia, Be an Inspiration”</p>
-        <p class="hero-desc">Ajang kompetisi pelajar untuk mengembangkan potensi, kreativitas, keterampilan, dan prestasi generasi cendekia.</p>
-        <div class="d-flex flex-wrap gap-2 mb-4">
-          <a href="#pendaftaran" class="btn btn-cyan btn-lg">Daftar Sekarang</a>
-          <a href="#perlombaan" class="btn btn-glass btn-lg">Jelajahi Perlombaan</a>
-        </div>
-        <div class="countdown-box" aria-live="off">
-          <div class="cd-label" id="cdLabel">Hitung mundur peluncuran</div>
-          <div class="cd-row" id="cdRow"></div>
-          <div class="cd-sub" id="cdSub"></div>
-        </div>
-      </div>
-      <div class="col-lg-5"><div class="orbit-wrap"><div class="orbit" id="orbit" role="group" aria-label="Orbit lima cabang lomba. Pilih sebuah planet untuk melihat detail lomba"></div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- TENTANG -->
-<section id="tentang" class="section">
-  <div class="container">
-    <div class="row g-4 align-items-center">
-      <div class="col-lg-6" data-aos="fade-up">
-        <h2 class="section-title">Wadah tumbuh bagi siswa SD/MI</h2>
-        <p class="lead-muted">ICMA Cendekia Competition diselenggarakan oleh SMP IT ICMA sebagai wadah pengembangan potensi siswa SD/MI dalam bidang keislaman, bahasa, dan olahraga.</p>
-        <p class="lead-muted mb-0">Terbuka bagi siswa kelas 4–6 di wilayah sekitar Kabupaten Pandeglang, dengan tema <em>“Be Cendekia, Be an Inspiration”</em>.</p>
-      </div>
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <figure class="about-photo">
-          <img src="assets/campus.jpg" alt="Foto udara kampus SMP IT ICMA: masjid berkubah emas dan gedung sekolah di tengah hijaunya alam" width="900" height="675" loading="lazy" decoding="async">
-          <figcaption>Pangkalan peluncuran: kampus SMP IT ICMA</figcaption>
-        </figure>
-        <div class="row g-3">
-          <div class="col-6"><div class="fact"><strong>5</strong><span>Cabang lomba</span></div></div>
-          <div class="col-6"><div class="fact"><strong>4–6</strong><span>Kelas SD/MI</span></div></div>
-          <div class="col-6"><div class="fact"><strong>2</strong><span>Gelombang pendaftaran</span></div></div>
-          <div class="col-6"><div class="fact"><strong>Online</strong><span>Daftar &amp; bayar dari mana saja</span></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LAB ORBIT -->
-<section id="lab" class="section">
-  <div class="container">
-    <div class="section-head" data-aos="fade-up"><h2 class="section-title">Laboratorium orbit</h2><p class="lead-muted">Pilih planet, baca fakta singkatnya, lalu hitung bobotmu di sana.</p></div>
-    <div class="panel lab" data-aos="fade-up">
-      <div class="row g-4 align-items-center">
-        <div class="col-md-5 text-center"><div class="lab-stage" id="labStage" aria-hidden="true"></div></div>
-        <div class="col-md-7" aria-live="polite">
-          <h3 class="lab-name" id="labName"></h3>
-          <dl class="lab-stats"><dt>Diameter</dt><dd id="labDia"></dd><dt>Gravitasi (Bumi = 1)</dt><dd id="labGrav"></dd></dl>
-          <p class="lab-fact" id="labFact"></p>
-          <label class="form-label" for="labKg">Bobot badanmu di Bumi (kg)</label>
-          <div class="input-group"><input id="labKg" type="number" inputmode="decimal" min="1" max="200" value="30" class="form-control"><span class="input-group-text" id="labOut"></span></div>
-          <div class="small text-muted mt-1">Massamu tetap; yang berubah adalah gaya gravitasi yang menarikmu.</div>
-        </div>
-      </div>
-      <div class="lab-picker" id="labPick"></div>
-    </div>
-  </div>
-</section>
-
-<!-- PERLOMBAAN -->
-<section id="perlombaan" class="section section-alt">
-  <div class="container">
-    <div class="section-head" data-aos="fade-up"><h2 class="section-title">Cabang perlombaan</h2><p class="lead-muted">Pilih lomba, lihat detailnya, lalu daftar.</p></div>
-    <div class="row g-4" id="cardGrid"></div>
-  </div>
-</section>
-
-<!-- JUKNIS -->
-<section id="juknis" class="section">
-  <div class="container">
-    <div class="section-head" data-aos="fade-up"><h2 class="section-title">Juknis perlombaan</h2><p class="lead-muted">Unduh atau pratinjau petunjuk teknis tiap lomba.</p></div>
-    <div class="row g-3" id="juknisList"></div>
-  </div>
-</section>
-
-<!-- INFORMASI -->
-<section id="informasi" class="section section-alt">
-  <div class="container">
-    <div class="section-head" data-aos="fade-up"><h2 class="section-title">Informasi pendaftaran</h2></div>
-    <div class="row g-4">
-      <div class="col-lg-7" data-aos="fade-up">
-        <div class="panel">
-          <h3 class="panel-title">Biaya pendaftaran</h3>
-          <div class="table-responsive"><table class="table fee-table align-middle mb-0" id="feeTable"></table></div>
-          <p class="small text-muted mt-3 mb-0">Gelombang ditentukan otomatis dari tanggal Anda mendaftar.</p>
-        </div>
-      </div>
-      <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
-        <div class="panel panel-navy">
-          <h3 class="panel-title">Informasi pembayaran</h3>
-          <dl class="pay-list">
-            <dt>Bank</dt><dd id="payBank"></dd>
-            <dt>Atas nama</dt><dd id="payName"></dd>
-            <dt>Nomor rekening</dt><dd class="acc" id="payNo"></dd>
-          </dl>
-          <div class="d-flex flex-wrap gap-2">
-            <button type="button" class="btn btn-cyan" id="btnCopyAcc">Salin Nomor Rekening</button>
-            <button type="button" class="btn btn-glass" id="btnConfirmPay">Konfirmasi Pembayaran</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6" data-aos="fade-up">
-        <div class="panel h-100">
-          <h3 class="panel-title">Ketentuan umum</h3>
-          <ol class="rules">
-            <li>Kegiatan diselenggarakan oleh SMP IT ICMA dalam rangka pengembangan potensi siswa SD di bidang Tahfidz, Bahasa Inggris, Bahasa Arab, dan Olahraga (Mini Soccer).</li>
-            <li>Peserta adalah siswa Sekolah Dasar (SD) atau Madrasah Ibtidaiyah kelas 4–6 di wilayah sekitar Kabupaten Pandeglang.</li>
-            <li>Peserta wajib mendaftar sesuai ketentuan panitia dan membayar biaya pendaftaran.</li>
-            <li>Peserta wajib mengisi formulir pendaftaran.</li>
-            <li>Technical Meeting dilaksanakan pada 16 November 2026 di SMP IT ICMA.</li>
-            <li>Peserta wajib hadir 30 menit sebelum lomba dimulai.</li>
-            <li>Peserta wajib menjaga sikap, kebersihan, dan ketertiban selama kegiatan berlangsung.</li>
-            <li>Seluruh keputusan juri bersifat mutlak dan tidak dapat diganggu gugat.</li>
-            <li>Panitia berhak melakukan penyesuaian jadwal apabila diperlukan demi kelancaran kegiatan.</li>
-          </ol>
-        </div>
-      </div>
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="panel h-100">
-          <h3 class="panel-title">Timeline</h3>
-          <ol class="timeline" id="timeline"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PENDAFTARAN -->
-<section id="pendaftaran" class="section">
-  <div class="container">
-    <div class="section-head" data-aos="fade-up"><h2 class="section-title">Pendaftaran online</h2><p class="lead-muted">Lima langkah singkat. Data tersimpan langsung ke sistem panitia.</p></div>
-    <div class="form-shell mx-auto" id="regShell">
-      <ol class="stepper" id="stepper" aria-label="Langkah pendaftaran">
-        <li>Sekolah</li><li>Lomba</li><li>Pendamping</li><li>Pembayaran</li><li>Konfirmasi</li>
-      </ol>
-      <div id="regAlert" role="alert" class="alert d-none"></div>
-      <form id="regForm" novalidate autocomplete="off">
-        <!-- STEP 1 -->
-        <fieldset class="step" data-step="1">
-          <legend>Kategori &amp; informasi sekolah</legend>
-          <div class="row g-3 mb-3" role="radiogroup" aria-label="Kategori pendaftar">
-            <div class="col-sm-6"><label class="pick"><input type="radio" name="kategori" value="Individu"><span>Pendaftar Individu<small>Mendaftarkan satu peserta atau satu tim</small></span></label></div>
-            <div class="col-sm-6"><label class="pick"><input type="radio" name="kategori" value="Sekolah"><span>Pendaftar dari Sekolah<small>Pembina mendaftarkan lebih dari satu siswa/tim sekaligus</small></span></label></div>
-          </div>
-          <div class="row g-3">
-            <div class="col-12"><label class="form-label" for="f_sekolah">Nama sekolah *</label><input class="form-control" id="f_sekolah" required maxlength="120"></div>
-            <div class="col-12"><label class="form-label" for="f_alamat">Alamat sekolah *</label><textarea class="form-control" id="f_alamat" rows="2" required maxlength="300"></textarea></div>
-            <div class="col-md-6"><label class="form-label" for="f_kec">Kecamatan *</label><input class="form-control" id="f_kec" required maxlength="80"></div>
-            <div class="col-md-6"><label class="form-label" for="f_kab">Kabupaten/Kota *</label><input class="form-control" id="f_kab" required maxlength="80"></div>
-            <div class="col-12"><label class="form-label" for="f_kepsek">Nama kepala sekolah <span class="text-muted">(opsional)</span></label><input class="form-control" id="f_kepsek" maxlength="100"></div>
-          </div>
-        </fieldset>
-        <!-- STEP 2 -->
-        <fieldset class="step" data-step="2" hidden>
-          <legend id="step2Legend">Pilih cabang lomba</legend>
-          <div id="entryBox" hidden class="mb-3"><div class="sum-title mt-0">Daftar peserta/tim yang sudah ditambahkan</div><div id="entryList" class="vstack gap-2"></div></div>
-          <div class="row g-3 mb-3" id="cabangPick"></div>
-          <div id="blockIndividual" hidden>
-            <div class="row g-3">
-              <div class="col-12"><label class="form-label" for="f_pnama">Nama lengkap peserta *</label><input class="form-control" id="f_pnama" maxlength="100"></div>
-              <div class="col-md-6"><label class="form-label" for="f_pjk">Jenis kelamin *</label><select class="form-select" id="f_pjk"><option value="">Pilih…</option><option>Laki-laki</option><option>Perempuan</option></select></div>
-              <div class="col-md-6"><label class="form-label" for="f_pkelas">Kelas *</label><select class="form-select" id="f_pkelas"><option value="">Pilih…</option><option>Kelas 4</option><option>Kelas 5</option><option>Kelas 6</option></select></div>
-              <div class="col-12"><label class="form-label" for="f_pttl">Tempat dan tanggal lahir <span class="text-muted">(opsional)</span></label><input class="form-control" id="f_pttl" maxlength="100" placeholder="Contoh: Pandeglang, 12 Mei 2016"></div>
+    <!-- MODAL DETAIL -->
+    <div
+      class="modal fade"
+      id="detailModal"
+      tabindex="-1"
+      aria-labelledby="dmTitle"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-lg modal-dialog-scrollable modal-fullscreen-sm-down"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <div>
+              <h2 class="modal-title h4" id="dmTitle"></h2>
+              <div class="small text-muted" id="dmCat"></div>
             </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Tutup"
+            ></button>
           </div>
-          <div id="blockTeam" hidden>
-            <div class="row g-3">
-              <div class="col-md-6"><label class="form-label" for="f_tnama">Nama tim *</label><input class="form-control" id="f_tnama" maxlength="80"></div>
-              <div class="col-md-6"><label class="form-label" for="f_tsekolah">Nama sekolah *</label><input class="form-control" id="f_tsekolah" maxlength="120"></div>
-              <div class="col-md-6"><label class="form-label" for="f_tpelatih">Nama pelatih/pendamping *</label><input class="form-control" id="f_tpelatih" maxlength="100"></div>
-              <div class="col-md-6"><label class="form-label" for="f_twa">Nomor WhatsApp *</label><input class="form-control" id="f_twa" inputmode="tel" placeholder="08xxxxxxxxxx"></div>
-            </div>
-            <div class="d-flex justify-content-between align-items-center mt-4 mb-2"><h3 class="h6 mb-0">Daftar pemain</h3><span class="badge badge-soft" id="playerCount"></span></div>
-            <div id="playerRows" class="vstack gap-2"></div>
-            <button type="button" class="btn btn-outline-primary btn-sm mt-3" id="addPlayer">Tambah pemain</button>
-            <div class="mt-4"><label class="form-label" for="f_ska">Surat keterangan aktif peserta didik/siswa * <span class="text-muted">(JPG, JPEG, PNG, atau PDF, maks. <span class="maxmb">2</span> MB)</span></label>
-              <input class="form-control" type="file" id="f_ska" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"><div class="small mt-1" id="skaInfo"></div></div>
+          <div class="modal-body" id="dmBody"></div>
+          <div class="modal-footer">
+            <a
+              class="btn btn-outline-primary"
+              id="dmJuknis"
+              target="_blank"
+              rel="noopener"
+              >Download Juknis PDF</a
+            ><button class="btn btn-primary" id="dmDaftar" type="button">
+              Daftar Lomba
+            </button>
           </div>
-          <button type="button" class="btn btn-outline-primary mt-3" id="btnAddEntry" hidden>Tambahkan ke daftar</button>
-        </fieldset>
-        <!-- STEP 3 -->
-        <fieldset class="step" data-step="3" hidden>
-          <legend>Data pendamping</legend>
-          <div class="row g-3">
-            <div class="col-12"><label class="form-label" for="f_gnama">Nama guru pendamping *</label><input class="form-control" id="f_gnama" maxlength="100"></div>
-            <div class="col-md-6"><label class="form-label" for="f_gwa">Nomor WhatsApp aktif *</label><input class="form-control" id="f_gwa" inputmode="tel" placeholder="08xxxxxxxxxx"></div>
-            <div class="col-md-6"><label class="form-label" for="f_gemail">Email <span class="text-muted">(opsional)</span></label><input class="form-control" id="f_gemail" type="email" maxlength="120"></div>
-          </div>
-        </fieldset>
-        <!-- STEP 4 -->
-        <fieldset class="step" data-step="4" hidden>
-          <legend>Pembayaran</legend>
-          <div class="pay-summary mb-3">
-            <div><span>Gelombang</span><strong id="payWave">–</strong></div>
-            <div><span>Nominal</span><strong id="payAmount">–</strong></div>
-          </div>
-          <div id="payBreak" class="small mb-3"></div>
-          <div class="panel panel-soft mb-3"><div class="small">Transfer ke <strong id="payBank2"></strong> a.n. <strong id="payName2"></strong></div><div class="acc fs-5" id="payNo2"></div></div>
-          <div class="mb-3"><label class="form-label" for="f_bukti">Unggah bukti transfer * <span class="text-muted">(JPG, JPEG, PNG, atau PDF, maks. <span class="maxmb">2</span> MB)</span></label>
-            <input class="form-control" type="file" id="f_bukti" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"><div class="small mt-1" id="fileInfo"></div></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" id="f_setuju"><label class="form-check-label" for="f_setuju">Saya menyatakan data yang diisi benar dan menyetujui data digunakan panitia untuk keperluan kompetisi ini. *</label></div>
-        </fieldset>
-        <!-- STEP 5 -->
-        <fieldset class="step" data-step="5" hidden>
-          <legend>Periksa &amp; kirim</legend>
-          <div id="summary"></div>
-        </fieldset>
-        <div class="d-flex justify-content-between mt-4 pt-3 border-top">
-          <button type="button" class="btn btn-outline-secondary" id="btnPrev">Kembali</button>
-          <button type="button" class="btn btn-primary" id="btnNext">Lanjut</button>
-          <button type="submit" class="btn btn-primary" id="btnSubmit" hidden>Kirim Pendaftaran</button>
-        </div>
-      </form>
-      <div id="regDone" hidden class="text-center py-4">
-        <div class="done-check" aria-hidden="true">✓</div>
-        <h3 class="h4">Pendaftaran berhasil dikirim</h3>
-        <p class="mb-1">Nomor registrasi Anda</p>
-        <div class="reg-id" id="regId"></div>
-        <p class="text-muted small mt-3 mb-3">Simpan nomor ini. Panitia akan memverifikasi pembayaran Anda.</p>
-        <div class="card-notice mx-auto" role="note"><strong>Penting:</strong> kartu peserta <strong>wajib dibawa saat pelaksanaan perlombaan</strong>. Unduh atau cetak kartu (ukuran 9 × 11 cm) di bawah ini.</div>
-        <div id="cardList" class="vstack gap-2 text-start my-3 mx-auto"></div>
-        <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
-          <button class="btn btn-cyan" id="dlCards" type="button">Download PDF Kartu</button>
-          <button class="btn btn-glass" id="prCards" type="button">Cetak Kartu</button>
-        </div>
-        <div id="waGroups" class="mb-4"></div>
-        <div class="d-flex flex-wrap gap-2 justify-content-center">
-          <button class="btn btn-outline-primary" id="copyRegId" type="button">Salin nomor</button>
-          <button class="btn btn-primary" id="waConfirm" type="button">Kabari panitia via WhatsApp</button>
-          <button class="btn btn-outline-secondary" id="newReg" type="button">Daftar lagi</button>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- FAQ -->
-<section id="faq" class="section section-alt">
-  <div class="container" style="max-width:820px">
-    <div class="section-head" data-aos="fade-up"><h2 class="section-title">Pertanyaan umum</h2></div>
-    <div class="accordion" id="faqAcc"></div>
-  </div>
-</section>
-
-<!-- PENDARATAN: penutup cerita -->
-<section id="puncak" class="summit">
-  <span class="pw earth" style="--s:74px" aria-hidden="true"><span class="pl k-ocean"></span></span>
-  <svg class="summit-art" viewBox="0 0 800 220" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <ellipse cx="400" cy="345" rx="640" ry="200" fill="#b8c8e6"/>
-    <ellipse cx="170" cy="190" rx="38" ry="9" fill="#93a8cf"/><ellipse cx="560" cy="175" rx="52" ry="11" fill="#93a8cf"/><ellipse cx="420" cy="205" rx="26" ry="6" fill="#93a8cf"/><ellipse cx="690" cy="205" rx="30" ry="7" fill="#93a8cf"/>
-    <g class="flag"><path d="M270 98V152" stroke="#fff" stroke-width="3"/><path class="cloth" d="M273 100h36l-8 11 8 11h-36z" fill="#2EBEFF"/></g>
-  </svg>
-  <svg class="rocket" width="34" height="68" viewBox="0 0 34 68" aria-hidden="true"><path d="M17 0c9 10 12 24 10 40H7C5 24 8 10 17 0z" fill="#fff"/><circle cx="17" cy="22" r="5" fill="#2EBEFF"/><path d="M7 32L0 48l8-4zM27 32l7 16-8-4z" fill="#1150F8"/><path class="flame" d="M11 42h12l-6 24z" fill="#ffb347"/></svg>
-  <div class="container position-relative text-center">
-    <h2 class="summit-title">Landasan bulan menantimu</h2>
-    <p class="summit-text">Setiap penjelajah besar bermula dari satu langkah berani. Langkahmu hari ini bisa menjadi inspirasi bagi teman-temanmu.</p>
-    <a href="#pendaftaran" class="btn btn-cyan btn-lg">Mulai Misiku</a>
-  </div>
-</section>
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-md-6"><h3 class="h5">SMP IT ICMA</h3><p class="mb-1" id="ftAddress"></p><p class="small opacity-75 mb-0">ICMA Cendekia Competition 2026 — Be Cendekia, Be an Inspiration</p></div>
-      <div class="col-md-6"><h3 class="h6">Hubungi panitia</h3><div id="ftContact" class="d-flex flex-wrap gap-2"></div></div>
+    <div
+      id="toastBox"
+      class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3"
+      style="z-index: 2000"
+    ></div>
+    <div id="busy" hidden>
+      <div class="loader-ring"></div>
+      <span>Mengirim data…</span>
     </div>
-    <hr class="opacity-25"><div class="small opacity-75">© 2026 SMP IT ICMA. Seluruh hak dilindungi.</div>
-  </div>
-</footer>
 
-<a id="waFloat" class="wa-float" href="#" target="_blank" rel="noopener" aria-label="Chat WhatsApp panitia">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.4-.2-2.600.7.7-2.500-.3-.4A8 8 0 0 1 12 4zm-3 3.500c-.3 0-.6.300-.8.600-.4.600-.4 1.300.1 2.200.8 1.600 2.200 3 3.900 3.800 1 .5 1.800.6 2.400.2.4-.3.600-.8.500-1.100l-1.500-.8-.6.700c-1-.3-2-1.300-2.400-2.300l.6-.7-.8-1.600z"/></svg>
-</a>
-
-<!-- MODAL DETAIL -->
-<div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="dmTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable modal-fullscreen-sm-down"><div class="modal-content">
-    <div class="modal-header"><div><h2 class="modal-title h4" id="dmTitle"></h2><div class="small text-muted" id="dmCat"></div></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button></div>
-    <div class="modal-body" id="dmBody"></div>
-    <div class="modal-footer"><a class="btn btn-outline-primary" id="dmJuknis" target="_blank" rel="noopener">Download Juknis PDF</a><button class="btn btn-primary" id="dmDaftar" type="button">Daftar Lomba</button></div>
-  </div></div>
-</div>
-
-<div id="toastBox" class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index:2000"></div>
-<div id="busy" hidden><div class="loader-ring"></div><span>Mengirim data…</span></div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="config.js"></script>
-<script src="script.js"></script>
-<script src="card.js"></script>
-<script src="story.js"></script>
-<script src="lab.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+    <script src="card.js"></script>
+    <script src="story.js"></script>
+    <script src="lab.js"></script>
+  </body>
 </html>
