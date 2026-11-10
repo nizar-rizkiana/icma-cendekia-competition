@@ -28,6 +28,7 @@
 ## C. Mengelola konten
 - Tanggal lomba, WhatsApp, biaya, periode, rekening, FAQ, info lomba, tautan juknis: **Admin › Pengaturan**.
 - Juknis PDF: unggah ke Google Drive (“Siapa saja yang memiliki link”), tempel tautan di kolom juknis tiap cabang.
+- Logo sponsor: letakkan file logo di folder `assets/`, lalu di `index.html` pada bagian `<!-- SPONSOR -->`, ganti teks `Slot Sponsor N` dengan `<img src="assets/nama-logo.png" alt="Nama Sponsor">`. Duplikasi satu kolom slot jika perlu menambah tempat. Perubahan ini hanya pada file website; struktur spreadsheet dan backend tidak berubah.
 - Cabang baru: **Tambah cabang** lalu isi biaya dan simpan.
 - Bukti transfer tersimpan **privat** di Drive; hanya terlihat lewat dashboard admin.
 

@@ -724,7 +724,7 @@
         ? "Data guru pembina"
         : "Data pendamping";
       $("label[for=f_gnama]").textContent =
-        (sek ? "Nama guru pembina" : "Nama guru/pendamping") + " *";
+        (sek ? "Nama guru pembina" : "Nama pendamping") + " *";
       const last = F.entries[F.entries.length - 1];
       const t =
         last?.team ||
